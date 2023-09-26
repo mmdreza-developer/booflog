@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Vazir-Medium;
+    src: url("../fonts/Vazir-Medium.eot") format("eot"), url("../fonts/Vazir-Medium.woff") format("woff"), url("../fonts/Vazir-Medium.woff2") format("woff2")
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fb6b36;
+    border-radius: 25% !important
+}
+
+::-webkit-scrollbar {
+    cursor: pointer;
+    width: 15px
+}
+
+*,
+body {
+    font-family: Vazir-Medium;
+    scroll-behavior: smooth
+}
+
+body {
+    background-color: #1a233a;
+    color: #fff;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important
+}
+
+a {
+    text-decoration: none;
+    transition: all .4s ease
+}
+
+a:hover {
+    text-decoration: none
+}
+
+li,
+ul {
+    list-style: none
+}
+
+.button-grid {
+    background: #1a233a;
+    padding: 5px 10px 5px 10px;
+    color: #fb6b36
+}
+
+/*# sourceMappingURL=Variable.min.css.map */

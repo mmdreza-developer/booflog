@@ -1,0 +1,131 @@
+@font-face {
+  font-family: Vazir-Medium;
+  src: url("../fonts/Vazir-Medium.eot") format("eot"), url("../fonts/Vazir-Medium.woff") format("woff"), url("../fonts/Vazir-Medium.woff2") format("woff2");
+}
+::-webkit-scrollbar-thumb {
+  background: #fb6b36;
+  border-radius: 25% !important;
+}
+
+::-webkit-scrollbar {
+  cursor: pointer;
+  width: 15px;
+}
+
+*,
+body {
+  font-family: Vazir-Medium;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a233a;
+  color: #fff;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+.button-grid {
+  background: #1a233a;
+  padding: 5px 10px 5px 10px;
+  color: #fb6b36;
+}
+
+.parts-banner {
+  background-color: #272e48;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.parts-banner .img-banner {
+  width: 100%;
+  height: auto;
+}
+.parts-banner .img-banner img {
+  width: 100%;
+  height: auto;
+}
+.parts-banner .write-banner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.parts-banner .write-banner .title-banner {
+  text-align: right;
+  font-size: 16px;
+}
+.parts-banner .write-banner .go-writing {
+  border: 3px solid #fb6b36;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 #fb6b36, 0 0 10px #fb6b36;
+  display: flex;
+  flex-direction: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #1a233a;
+  transition: all 0.4s ease;
+}
+.parts-banner .write-banner .go-writing:hover {
+  transform: translateY(-5px);
+  box-shadow: inset 0px 10px 10px 30px #fb6b36, 0 0px 10px 0px #fff;
+  border-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .parts-banner {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-banner {
+    font-size: 16px !important;
+  }
+  .title-banner .go-writing {
+    font-size: 12px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .parts-banner {
+    display: flex;
+    flex-direction: row;
+  }
+  .title-banner {
+    font-size: 16px !important;
+    font-size: 20px;
+  }
+  .go-writing {
+    font-size: 17px !important;
+  }
+}
+@media screen and (min-width: 991px) {
+  .title-banner {
+    font-size: 26px !important;
+  }
+  .go-writing {
+    font-size: 21px !important;
+  }
+}/*# sourceMappingURL=banner.css.map */

@@ -1,0 +1,83 @@
+@import "./Variable.scss";
+// body {
+//   overflow: hidden;
+// }
+.contentLoginAdmin {
+  .sectionLoginAdmin {
+    padding: 50px;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .titleLoginAdmin {
+        color: $bg__master;
+      }
+      .secInput {
+        position: relative;
+        width: 60%;
+        background-color: $bg__dark__light;
+        label {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          font-size: $font-size - 2px;
+          z-index: 1;
+          color: $bg__white;
+          transition: 0.5s ease;
+          &:focus {
+            top: -8px;
+          }
+        }
+        input {
+          width: 100%;
+          position: relative;
+          outline: none;
+          border: none;
+          padding: 5px;
+          background-color: transparent;
+          color: $bg__white;
+          transition: 0.5s ease;
+          font-size: $font-size - 2px;
+          border-bottom: 2px solid transparent;
+          z-index: 2;
+          &:not(:placeholder-shown) ~ label {
+            top: -8px;
+            font-size: $font-size - 4px;
+          }
+          &:focus ~ label {
+            top: -8px;
+            font-size: $font-size - 4px;
+            color: $bg__master;
+          }
+          &:focus {
+            border-bottom: 2px solid $bg__master;
+          }
+        }
+      }
+      .btnLoginAdmin {
+        width: 60%;
+        button {
+          width: 100%;
+          outline: none;
+          border: none;
+          background-color: $bg__master;
+          color: $bg__white;
+          transition: 0.4s ease;
+          &:hover {
+            box-shadow: 0 0 8px $bg__master;
+          }
+        }
+      }
+    }
+  }
+  .sectionImgLoginPanelAdmin {
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 991px) {
+  .sectionLoginAdmin {
+    margin-top: 200px;
+  }
+}
+

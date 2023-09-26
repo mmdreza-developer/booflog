@@ -1,0 +1,204 @@
+// Style Cart
+.animationLike {
+  animation: heartLike 1.4s infinite;
+}
+.containerCard {
+  margin-top: 20px;
+  @include flexBox(flex, none, stretch, none);
+  .cardPost {
+    background-color: $bg__dark__light;
+    border-radius: 15px;
+    padding: 20px;
+    @include flexBox(flex, column, space-between, none);
+    overflow: hidden;
+    &:hover .postIconsCard {
+      transform: translateX(0) !important;
+    }
+
+    &:hover .imgPostTopic img {
+      transform: scale(1.2) rotate(5deg);
+    }
+    .profilePartCard {
+      @include flexBox(flex, row-reverse, flex-end, none);
+      div {
+        .firstWordNamePersonCard {
+          font-size: $font-size + 10px;
+          font-weight: blod;
+        }
+        .cardPersonNameProfile {
+          margin-left: 25px;
+        }
+      }
+      .cardImgProfile {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        width: 53px;
+        height: 53px;
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $bg__master;
+        overflow: hidden;
+        i {
+          font-size: $font-size + 5px;
+        }
+      }
+    }
+    .centerPartCard {
+      .postTopic {
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 10px;
+      }
+      .imgPostTopic {
+        width: 100%;
+        background-color: $bg__dark;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        img {
+          transition: all 0.4s ease;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .postDescription {
+        text-align: justify;
+        font-size: $font-size - 2px;
+      }
+    }
+    .bottomPostCard {
+      .postIconsCard {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 10px;
+        transition: all 0.4s ease;
+        transform: translateX(260px);
+        .CountLikeDollarPost,
+        .CountLikeDollarPost,
+        .CountCommentPost {
+          transform: translateX(2px);
+          display: inline-block;
+          font-size: $font-size - 4px;
+        }
+        .boxCommentPost {
+          transition: all 0.4s ease;
+          .iconCommentPost {
+            font-size: $font-size + 3px;
+            font-size: $font-size + 15px;
+            color: $bg__gray;
+          }
+        }
+        .BoxBookMarkPost {
+          transition: all 0.4s ease;
+          font-size: $font-size + 15px;
+          margin-right: 8px;
+          a {
+            color: $bg__white;
+          }
+        }
+        .BoxLikeDollar {
+          padding: 0 2px;
+          .fa-heart {
+            color: green;
+            font-size: $font-size + 17px;
+            position: relative;
+          }
+          .fa-dollar {
+            font-size: $font-size - 4px;
+            position: absolute;
+            right: 37%;
+            top: 37%;
+            color: $bg__white;
+          }
+        }
+        .BoxLikeRed {
+          padding: 0 5px;
+          a {
+            font-size: $font-size + 15px;
+            color: red;
+          }
+        }
+      }
+    }
+    @keyframes heartLike {
+      0% {
+      }
+      20% {
+        transform: scale(1);
+      }
+      30% {
+        transform: scale(1.3);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.3);
+      }
+    }
+    .showMoreCard {
+      a {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        color: $bg__white;
+        background-color: $bg__master;
+        transition: all 0.4s ease;
+        &:hover {
+          background-color: #e6744a;
+        }
+      }
+    }
+  }
+}
+// Style BestBlogs
+.titleBestBlogs {
+  padding-bottom: 20px;
+  display: block;
+}
+.sidebarBsetBlogs {
+  .bestBlogs {
+    li {
+      @include flexBox(flex, row, flex-start, none);
+      margin-bottom: 10px;
+      a.linkBestBlogImgProfile {
+        margin-bottom: 15px;
+        .bestBlogImgProfile {
+          background-color: $bg__master;
+          color: $bg__white;
+          width: 53px;
+          height: 53px;
+          justify-content: center;
+          @include flexBox(flex, row, center, center);
+          align-items: center;
+          border-radius: 50%;
+        }
+      }
+      color: $bg__white;
+      .bestBlogSectionTopicAndNamePerson {
+        @include flexBox(flex, column, flex-start, flex-start);
+        margin-right: 4px;
+        margin-top: 5px;
+        .bestBlogSectionTopic {
+          text-align: right;
+          font-size: $font-size - 2px;
+          color: $bg__white;
+        }
+        .bestBlogSectionNamePerson {
+          line-height: 2;
+          font-size: $font-size - 4px;
+          color: $bg__gray;
+        }
+      }
+    }
+  }
+}

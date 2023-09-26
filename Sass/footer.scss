@@ -1,0 +1,77 @@
+// Style Footer
+.sectionFooter {
+  position: relative;
+  background-color: $bg__dark__light;
+  .sectionRightFooter {
+    .titleLogoFooter {
+      .boof {
+        color: $bg__master;
+      }
+      .log {
+        color: $bg__white;
+      }
+    }
+    .ul-right-footer {
+      li {
+        margin: 5px 0;
+        a {
+          color: $bg__white;
+          position: relative;
+          @include padding(0, 0, 5px, 0);
+          font-size: $font-size - 2px;
+          &:hover {
+            color: $bg__master;
+          }
+        }
+      }
+    }
+  }
+  .sectionCenter1Footer {
+    .titleCenter1Footer {
+      color: $bg__master;
+    }
+    .ul-center1-footer {
+      li {
+        margin: 5px 0;
+        a {
+          color: $bg__white;
+          position: relative;
+          @include padding(0, 0, 5px, 0);
+          font-size: $font-size - 2px;
+          &:hover {
+            color: $bg__master;
+          }
+        }
+      }
+    }
+  }
+
+  .sectionCenter2Footer {
+    .titleCenter2Footer {
+      color: $bg__master;
+    }
+    .ul-center2-footer {
+      gap: 10px;
+      li {
+        a {
+          color: $bg__white;
+          font-size: $font-size + 7px;
+          transition: all 0.4s ease;
+          &:hover {
+            color: $bg__master;
+          }
+        }
+      }
+    }
+  }
+
+  .buttonFooter {
+    background-color: $bg__dark;
+    padding: 10px;
+    text-align: center;
+    @include flexBox(flex, row, center, center);
+    .copyRighting {
+      font-size: $font-size - 2px;
+    }
+  }
+}

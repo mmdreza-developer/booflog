@@ -1,0 +1,81 @@
+@import "./Variable.scss";
+// Style Banner
+.parts-banner {
+  background-color: $bg__dark__light;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .img-banner {
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .write-banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .title-banner {
+      text-align: right;
+      font-size: $font-size;
+    }
+    .go-writing {
+      border: 3px solid $bg__master;
+      margin-top: 30px;
+      font-size: $font-size;
+      color: $bg__white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 0 0 $bg__master, 0 0 10px $bg__master;
+      @include flexBox(flex, none, center, center);
+      border-radius: 10px;
+      padding: 10px;
+      background-color: $bg__dark;
+      transition: all 0.4s ease;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: inset 0px 10px 10px 30px $bg__master,
+          0 0px 10px 0px $bg__white;
+        border-color: $bg__white;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .parts-banner {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-banner {
+    font-size: $font-size !important;
+    .go-writing {
+      font-size: $font-size - 4px !important;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .parts-banner {
+    display: flex;
+    flex-direction: row;
+  }
+  .title-banner {
+    font-size: $font-size !important;
+    font-size: $font-size + 4px;
+  }
+  .go-writing {
+    font-size: $font-size + 1px !important;
+  }
+}
+@media screen and (min-width: 991px) {
+  .title-banner {
+    font-size: $font-size + 10px !important;
+  }
+  .go-writing {
+    font-size: $font-size + 5px !important;
+  }
+}

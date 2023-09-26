@@ -1,0 +1,223 @@
+@import "./Variable.scss";
+body {
+  box-sizing: border-box;
+}
+.SectionAbout {
+  .sectionContent {
+    h2 {
+      color: $bg__master;
+    }
+    p {
+      line-height: 28px;
+      font-size: $font-size - 2px;
+    }
+  }
+  .sectionDescriptionAdmin {
+    .imgAdmin {
+      padding: 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .descriptionAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg__master;
+    p {
+      font-size: $font-size - 2px;
+      line-height: 1.8;
+    }
+  }
+}
+.sectionBoxSpecials {
+  text-align: right;
+  .boxSpecial {
+    display: flex;
+    div.iconBoxSpecial {
+      margin-top: 5px;
+      margin-left: 10px;
+      span {
+        background-color: $bg__master;
+        color: $bg__white;
+        padding: 7px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .textBoxSpecial {
+      .titleSpecial {
+        font-size: $font-size + 4px;
+      }
+      p {
+        color: $bg__gray;
+      }
+    }
+  }
+}
+.sectionAboutBooflog {
+  border-top: 2px solid $bg__master;
+  .titleAboutBooflog {
+    h4 {
+      color: $bg__white;
+    }
+  }
+  .subTitleAboutBooflog {
+    border-bottom: 2px solid $bg__master;
+  }
+  .contextAboutBooflog {
+    font-size: $font-size - 1px;
+    line-height: 1.8;
+  }
+}
+.sectionAboutAdmin {
+  width: 100%;
+  display: flex !important;
+
+  text-align: justify;
+  .aboutMe {
+    .titleAboutMe {
+      span {
+        background-color: $bg__master;
+        width: 200px;
+        display: inline-block;
+        text-align: right;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+    .contextAboutMe {
+      font-size: $font-size - 2px;
+    }
+  }
+}
+.myGoals {
+  text-align: justify;
+  .titleMyGoals {
+    span {
+      background-color: $bg__master;
+      width: 200px;
+      display: inline-block;
+      text-align: right;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+  .contextMyGoals {
+    font-size: $font-size - 2px;
+  }
+}
+.myMission {
+  text-align: justify;
+  .titleMyMission {
+    span {
+      background-color: $bg__master;
+      width: 200px;
+      text-align: right;
+      display: inline-block;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+  .contextMyMission {
+    font-size: $font-size - 2px;
+  }
+}
+@media screen and(min-width:768px) {
+  .sectionAboutAdmin {
+    display: grid !important;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .aboutMe {
+    grid-area: 1/2/2/4;
+  }
+  .myGoals {
+    grid-area: 2/4/3/6;
+  }
+  .myMission {
+    grid-area: 3/2/3/4;
+  }
+}
+.sectionFormValidation {
+  .imgFormValidation {
+    img {
+      width: 100%;
+    }
+  }
+  .formValidation {
+    .titleFromValidation {
+      color: $bg__master;
+      margin-bottom: 15px;
+      span {
+        padding: 5px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 100%;
+          height: 4px;
+          bottom: 0;
+          background-color: $bg__white;
+          box-shadow: 0 0 5px $bg__white;
+          border-radius: 50%;
+        }
+      }
+    }
+    form {
+      .inputs {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        input {
+          width: 100%;
+          background-color: transparent;
+          outline: none;
+          border: 2px solid $bg__white;
+          padding: 5px;
+          color: $bg__white;
+          &::placeholder {
+            color: $bg__white;
+          }
+        }
+      }
+      .textArea {
+        width: 100%;
+        textarea {
+          background-color: transparent;
+          width: 100%;
+          margin-top: 10px;
+          padding: 5px;
+          color: $bg__white;
+          outline: none;
+          border: 2px solid $bg__white;
+          &::placeholder {
+            color: $bg__white;
+          }
+        }
+      }
+      .submitFormValidation {
+        text-align: right;
+        button {
+          outline: none;
+          border: none;
+          background-color: $bg__master;
+          color: $bg__white;
+          width: 140px;
+          height: 40px;
+          font-size: $font-size + 2px;
+          transition: all 0.5s ease;
+          &:hover {
+            box-shadow: 0 0 8px $bg__master;
+          }
+        }
+      }
+    }
+  }
+}

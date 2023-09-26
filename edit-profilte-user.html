@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit-profile-user</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/editUser.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/panel-user.css">
+</head>
+
+<body>
+    <!-- Start Header -->
+    <header class="container-fluid position-sticky position-relative">
+        <div class="row sticky-top top-menu pt-4">
+            <div class="logo col-12 col-md-12 col-lg-1 d-flex justify-content-between menu-right">
+                <a id="icon-bars" class=" d-lg-none" href="javascript:0"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAFFJREFUSEvtlEkKADAIA83/H52eu1APZQShnquTBaqAR/D9+IA04fqIbDuVdXkgaRK9OcABL+pPu/Ud4A7wDnAAHlF/AN4BDujfwXewJoD/pgNrVBgZX2h0sgAAAABJRU5ErkJggg==" /></a>
+                <a href="#" class="Booflog">
+                    <img width="150px" src="./assets/img/logo.png" alt="">
+                </a>
+                <a class="icon-question d-lg-none" href=""><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPpJREFUSEvlk9FtwkAQRN9UkNBB0gEdBDpIB6SDiApIOqAEOoBUkNABVJB0AFSwaNEigbHvbMWWLLE/d7Lkebsze6LjUsf63AnAzF6Bd2AUlv4An5L8TFbWIjNbAJMKFYd8pAhJQHS+DIEpsIr7GzCL+zg1SQ7gFrwAU0nzy07NzDt3yFrS2bqbYXIAiz8GkvYFwBPw698kVepkM6jy18wegR1wkOT30voP4Bz+lyTfsnYA0bkH774f/JS0aQUQ4t/AsI74KZ/cQykE65vkD24bnV8FX6bVFOCCD8CzpL86zTUFnNY2tZZFaL8AdSzp9wRm1m0GnVt0n4AjaYJWGZfqTRYAAAAASUVORK5CYII=" /></a>
+            </div>
+            <div class="menu-center-section col-6 col-md-8 col-lg-5">
+                <div class="search-box">
+                    <input type="text" placeholder="جستــجو">
+                    <button class="pt-2"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXBJREFUSEu1lH1VA0EMxGcUgAUUAAoAB1QBVAGgAKqAooCigFZBWwdFAeCgVRDe8LK8Pbp7TT8u/93b2/1lkkmIjoMdv48iwMyOAdwBuAZw5kksAIwBvJBcRhNbA5jZLYBnAIKUQo8/kBxFIA2AP/7qFycAhiRn+jazSwBPAC78vEdSilrjD+Bl+fTM+7UMzUyQRwBScrKpXDkgXZyQVO2rYWZSJSUDkrpXjRygJp4CuEplqd3yck0BLEieRwGmH0mGrGtmof9zBaELKVsHrEjW3Pb7664lUo/eAcxJyl2hHqQmj0n2gk3WPAyjAEn9AnAkv5MclC5mNv3WlIdt6sOUpOtTVhRong2a/J9KstGijR5kzdOqkGwpKcXKzwWTtTXtb7UytS27e192mg3Fhy87Pbg0szQ3OhuR7JcgIc9XeiGlaW9VITsDvC/aqDdZAmtK9gJEIHsDCpDGJj4IIIPM/q/5gwG2smnb6G971rmCH/JPnxkOXXf0AAAAAElFTkSuQmCC" /></button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-5 menu-left-section d-flex justify-content-end align-items-center mb-3">
+                <div class="login-register">
+                    <a class="btn-login-register" href="./login.html">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAM1JREFUSEvlVcENwkAMsyeADYAJ6AiMUiajm8Ao7QZsYBTpik4nIDnpDglx3zpxYycy0fmxc398j0DSCcAFwD4w1QzgTPLmYZ8TSLKinVeQfZ9JHjx8TiADk3RlkxTG/hGBpInkaDI2lUjSFsAVwBDxpzT9oweShtTcSEILECaQZHLYXVS9csq3E3QnSGaaRHatm+YSrbokk43k2NzkXPxua/rK4aZ38FME93Vbgou/kHSzI78DC5wpmAkLgLEqcIJ/XQ1zw6W6Y1HQneABrA+OGWmRYZUAAAAASUVORK5CYII=" />
+
+                        <span>ورود</span> |
+                        <span>ثبت نام</span>
+                    </a>
+                </div>
+                <div class="middle-line"></div>
+                <span class="dropdown icon-profile">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA0hJREFUWEfdWNFRFUEQnI5AjUCIQIhAyUAjECIQIxAjUCIQIwAjECIQIhAiECJoq69mXs3t7d7e4/yg3KpXr+7e3mzPTE/P3IM9sYUnhsf+D0Ak98zsvZnp+7l/K9jXZnbv398B6HqrtVWESH4wsxMHseQggTsBcLpks/YsAkTyjZl9M7OdpYaLfbdmdgTgsvd8FxDJQweTbd2Z2YWZ6YDbSI2nUqDfmpmceFkAEKizOVCzgEgqKgIU68HMjntGYzPJY0/xs2TjDMBRC1QTUCUyV/IcgHixeJEU6RXJV+mhZqSqgJwzP5MBVUyO1PATSRH8dVFlFzUSk1SqVJmxDmqcagH6nQh8BUB82CznitKpsq8tlbuiMCp7krqOSIl7u+XDE0Ce9y++UZzZKdNUGG6l7xrAfuGI0qeKC059BPA176kB+pN0ZpJrT9MnN3LjJB/K2VOtAyIKnwEorTm6Ino4fA/gRROQp+KXb7gDMNEdkjpcvNGa8KDg3yTdDlxRCknYz6kdRYikvJMaa50CkDejRVJVNoQcQIuD9IcmEXBAmeCjc0pA2ft3ACR+awA9ABBvShsSznO/OYpiCUjpisoZhTIs/qOU6Yygxoj8JaAI9Vw6RNIgtcpYzfOHp0Ke67dwakLq5Fj1rK0B+cFZT8qMxPUNgJZOqSIXAcoHVVPmgHSQiJnbQQYmOThszUNFNc9yqEvqfKqLqNIUkZBDah0jsVtD6m7ZV4wLTCivqqo7Jc7JS8kh9axoqtVeQ1JiKa1Ss52UdOiPp1QaIxEsyz73ypG41lpHVtFR6/CRRLLfAlKeLRGVjY2eFWPNpBvUAOWylsFdNdfKSLKpJh/sdS2gNaIPUfDZSNEJhyayUAOkzeJB9JpLAAckc5hHTbWSEqU+N9kh/SSz8GoM3isniaUDmgBGJVUNVUCVjmUb2r58QHOtyRWXz5vMMC1lLGarvK3auLWhN+Tn2SUM6p5G2tnZ2vkS73GLHXrsa5DASKlVPWoRAzgHIVJLLGuysO41KDVC8UcpjMGslaXWfb2x6PWpK5rdCBWtoqyeHjAB0TTQfWMNQ1sBShETMH3ij4bcy+IPB8nFYiCrAPXCsub3R0VozYG9Z58coL93faU0y6SBtAAAAABJRU5ErkJggg==" />
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class=""><a class="dropdown-item moneyBag" href="javascript:0">
+                                <div class="firstMoneyBag">
+                                    <div>موجودی قابل برداشت:</div>
+                                    <div>
+                                        2000تومان
+                                    </div>
+                                </div>
+                                <div class="secondMoneyBag">
+                                    <div>موجودی قابل اهدا: </div>
+                                    <div>10000 تومان</div>
+                                </div>
+                            </a></li>
+                        <li><a class="dropdown-item" href="./panel-user.html"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAchJREFUWEftl4FNAkEQRf+vQO1AK1AqEDvQCpQKtAOhArECsQOoQK1ASrAErGDMv+ySY9nz9rhbORMmIYSwN/v2z9zsDNEzY8948D+AzOwCwBOAYSYF5wAmJJeh/y2FzOwUwCeA40ww3u0KwBlJfa8tBvTg1MnMU7gfkZzVAY0BPLpFklW/OzMz+9V/TKEDUGchMzMlvsJ755wqHxTmjUQtb5g1ZGY2BXAfJNgzSb0YUcsNJCWOgp1XJE/6BPRNsrKG5VaodyGTEioT5aQe7y2pd6mWuUMmhS4B6DKW6bL82ItC7qR65cME1ps3JTmJKZhFITNTAbytCdmM5Chc0zmQmSmBXxLz54akep+15QBSnpwnAi1JDnIDWSJMsYzkRkeRQ6FG/VHYT3UO1ESdP3vL2kC1VegdgD5VtggnB9cjhS1J+XlNMn6a2WqRYy2sFr8lqqAieOWhHIye9ZW7zs0gPFB0UEwsfH6zAgrAlztIKswrSX8pr8ErJ1c3LF5XHFHXRTksghJQGWbh7raYi3lsSCzKRJ2mVf/XVOzo6VP22hlIziugdoZppZA/bQDVCqYToJJSw1iSpoSpvKZVyJpulrL+AFSn0g9W0U00HZlAlgAAAABJRU5ErkJggg==" />
+                                حساب
+                                کاربری</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAYFJREFUWEftmItNAkEQhv+pQO0AO8AOtAItQTvQCpAKtARL0AosQTuQDsQKxvxkjsDevuRmzZHcJoRk2dv7+HYeB4KRDRkZD44PSFXnAJ4AXA60+QpgKSKfuX2yhlR1BuADwOlAmO7yNYBzEeF7dJSA7s2OE89mmzsReTkU6BHAwpPGjo37HmRoAirFUMrQEsCzOWec8cXBud352HEz01yPrLehlQaEKa2qsS/kDsS0XdUEupWNr2CtO9BZro7s3lxVWb++WwM9iEgXJ1lRqhqrY+6GWGWvSi3A4uo9UuXdgWiFUBepWCq0nCZAhGKTpKm9vmRxQzNsyrHRDKgHVQHDa5oCbaFMRc5MZ6s5EG/E7s0Uv6moT/8CVMGxXTIBlWxNhiZDoYEfALc2yfQ/KShqGkNvhOnah1VqQl1noJoAbayICH/89YaqskCmbLkD7VlJmcjYcgPKWsmAhbZcgKqsVNoaBMRH0FUqVkoFJ/zcYmuWewQ+vr9j/mph6PrRGfoFQLDzJSBqvYQAAAAASUVORK5CYII=" />
+                                علاقه مندی ها</a>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAWNJREFUWEftl4FNwzAQRf+fgI7ABsAEwAaMQDdgA+gm7QYwAWUD2AQmOPQlV3Lcxo4vlhqBLUWpmtzl+e58/iYWNrgwHnSgUkaOImRmlwBuAejuGW8kPz2GshkAmdk1gHcAK6/DYLclufb4SIE0syuPoxM2N55IpUAWOd44wO5CumW6IflS62MUiGT1CjQzATwHiA50lI0eoVKBjkXIzJ4A7KesutZFrVWmS0MAe/2IQNckt7mJNQUa+1ASuWzTPAeQuNWA70l+p5OoBgqzjRtoqbT0PE7l4X3BCGqw73mAamFKwIO6+hNA1ftTSJkkTTx+9P/slJXif+p5ssr0yleAmV/UDYB2JB/H/FTXUA7IzGL58XH2xrjEraProWxN/y89BMDbAA/yo4mmln5JO6qn9cimyTFIB0VBXXgpgl22+U0WaEHd6dT6MOMo/TpFqk7q1DOj0sS8+jDY5KsZJx2oFOFfoqn3JToiIO0AAAAASUVORK5CYII=" />
+                                خروج</a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <div id="menu-section" class="container-fluid ">
+            <div class="col-6 menu-bottom d-none d-lg-block mr-5">
+                <ul>
+                    <li><a href="./index.html"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQtJREFUSEvtld0RwjAMg6UJgAmACYANYBOYDDaBEcoGdALYwFx6CZcGt6j8vJG3Xh19dqw4xI8Xf6wPGWBmYwDHmNCG5E1JTgJk4ssoWgGQIC8Bhfg5AhYAJEgvwBFfR8AJgATpBHji6dzjPwniAvrEU2NVyBNAER8CaQGGiKuQB8Cx4kT1etx79SycA4LtgjOaRfKlhfOLZmaWfVckV41OVuo3AWeSzaX0mtxkkiows+D9PYBZMRouAHYkg12RKigrVwBBaNoxdy4k558CWhVlR1pW6sYpFfwB7faVbuhyhxrn9SC8VCPltXJiapItO3uA4PtDjzW72DWAbboXj4nwZqbytkHzRlbNAu/N8t0Z2j1f+wAAAABJRU5ErkJggg==" />
+                            خانه</a></li>
+                    <li><a href="./index.html"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMhJREFUSEvtVcERwjAMkzZgBDYAJqBswgiMwAiMwChlAmADRmADce6lHLR10nKED/Gnd7UjRb5YJjIHM+PjdwSSagDriKI7gEPI7wDMIrU1yY3lnwok6ZvtItlg9wjaRJdM0hLAOfxfkbwMXai96GQCA+seLgS9DpQWNXPgPdPyij4aoj8dNMdRbwCOAPYhb98tgLnnwENml9oHU9z8RLJ6s+vY6WDVpmAR6q6mwLPsV6zRK1OSbTBTaVGRtA2XjNEESSSnIDvBA5xDvxmxREy1AAAAAElFTkSuQmCC" />
+                            وبلاگ</a></li>
+                    <li><a href="./about.html"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASJJREFUSEu1lmFVw0AQhL9RACgAFIAEUAASQAFUAeAAFAAScFAc4AAcAAqGt30Jr22uzSbX7O+9+XZns3cRE4cm1qcDsH0J3AGnFfC5pPM4XwJ8AYcV4oujkhbaJYBrxWsAM+ClKeC2sbJYz5gOZpIel9Vs32+CdAC2+6w5kPSzBjgCPkst7AqwD3ynAG3Slk4eJIUl/2H7CnjeFSB0AvAKhFUXQMwkuujEGIsGfb1jAb/AR0OKTd/bRB36mb6FHZLmazM4A2Ifwq6VGAK4ltQuV7Hg0rCzFj1Jigp7w3YM/KZNzAKOJcXl1xu2V5YuZVGb1KveJCzvUAqQFU7tQZuUuJNS3G0dTP7gxJMZV8JJqtRy0ruk2JHui1YhWjw6+V/FH8JvhhnH310GAAAAAElFTkSuQmCC" />
+                            درباره ما</a></li>
+                    <li><a href=""><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAU5JREFUSEvFlWFRQzEQhHcVgANAAaAAUABVAHUACgoOqAJaBYACWgfgAAk4WGaZpJOG5M174XW4n226XzZ3eyV2XNyxPv4HIOkRwAGAKcmvv7jcciBpH8AzgPMguiJ5MSbgHcBxJrggOW2F5A5UEWqG9AWYe0fSvRlUOWAF4Kyi8EryapA6sD2mkhYArgsiH258y0TlDnxDT1FazeIWKY3pJ4C9hHBE0p811a8kF57pgeR9k3ruwCKSDgE4D9GFk3yauwihfALgMM5rFyjuIkm+8Sz5kYGTCAnibwBOwplqTqrLTtILgMsEYifOwTIMQhSPR4qQLoD3knORr46udvi8nW4WZOe6Dk9hJ7XwlWBLkjfxi17/B6Ent9n41pzMSfrsT/UCJNPl5juMaU5S0JpkXPXDAFElPJshFvJIx+crJr63g9GC1io0KGhjQr4BmPdtGWiiH+cAAAAASUVORK5CYII=" />تماس
+                            باما</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="side-menu-mobile">
+            <img class="closed"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAuFJREFUWEfdWO1RFUEQ7I5AjECMAIhAjECJQIhAjECIQIxAiACJAIwAiADIACIYq6nZV3tzu3d7986qV86fq/f243pnenpmj9gw44bhwf8ByMx2AXwBoOeWP+XsOwDP/rwgqd+TbJKHzOwEwFcH0fIigTsjedoyWXOaAJnZZwA/AGy3bhzmPQL4RvL32PpRQO6V72GjJwDa/AbAYwqNh1Kg9wHoEO/CupMxbw0CMrNz50raV0C0qf4fNTM71PwA7JzkUW1xFVDBM1cADkmKF81mZiK9DvApW3RKUkB7VgTknLnMZitjdNrZVvD2QYlTNUAiYYr/FUnxYW0zM/EueUrcex837QEKoRJndmOYzGybpEBXrTTHw6d1b3xhL3QlQOJIWnAUCeyZdK0sq5HTwyNPfIzi6ET/5YCeSb7NT9UB5C+79QlPJDu6o1MD0LiIKutlTOCKDrcXvWlmOSU0vlL0COjMlVgv+0nyOMakQM4VqMJYMRnMrPqeCEhC98FBFLNAYyVQrvqqb8mqmRmy+A9JCemrRUBy3Y6PdVzZ4Kl8yqBMBGrckdyrAbLVANlSVqKSa3mTZplZ8V3RQ0sAGiwN6cCtgJYK2SCoELJ7kuqrihyaS+oL3y8ndRXUFFLPSfsVZ4YkIWf8lLSX65Iw9mqNC6PCmpS8R+AA6sVLT6fMNAuja0xL6VBoVTqKHYCDUkHeHykdLyST6vc55IDUp6QOUSeTHnV6oDWL60NWesaLq4PKa408cRCFcc7v0H70amVPqTONkLvzBq1JW4ZArtWgFUKnv9RcqR2Z08Kq3cibvGktbOapWBoUSjX5SXcGI+e9j65POXEHS0tLvcpJngAIWLoGiQuv/YwrsFrfdA2K97iqZ4pKXTuuK6tEM96zWrmtVvh4kYtiUFh5S01bEsYxQBJGXaWLV57S4tGQlRZ5aCSK6WND6qHus48Nysx/+7FhzB1LjM/y0BIvru2xcYD+AqS8jjSzGB5MAAAAAElFTkSuQmCC" />
+            <div class="logo-side-menu w-100 d-flex justify-content-center p-3">
+                <img width="150" src="./assets/img/logo.png" alt="">
+            </div>
+            <ul class="second-ul">
+                <li><a href=""><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQtJREFUSEvtld0RwjAMg6UJgAmACYANYBOYDDaBEcoGdALYwFx6CZcGt6j8vJG3Xh19dqw4xI8Xf6wPGWBmYwDHmNCG5E1JTgJk4ssoWgGQIC8Bhfg5AhYAJEgvwBFfR8AJgATpBHji6dzjPwniAvrEU2NVyBNAER8CaQGGiKuQB8Cx4kT1etx79SycA4LtgjOaRfKlhfOLZmaWfVckV41OVuo3AWeSzaX0mtxkkiows+D9PYBZMRouAHYkg12RKigrVwBBaNoxdy4k558CWhVlR1pW6sYpFfwB7faVbuhyhxrn9SC8VCPltXJiapItO3uA4PtDjzW72DWAbboXj4nwZqbytkHzRlbNAu/N8t0Z2j1f+wAAAABJRU5ErkJggg==" />
+                        خانه</a></li>
+                <li><a href=""><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMhJREFUSEvtVcERwjAMkzZgBDYAJqBswgiMwAiMwChlAmADRmADce6lHLR10nKED/Gnd7UjRb5YJjIHM+PjdwSSagDriKI7gEPI7wDMIrU1yY3lnwok6ZvtItlg9wjaRJdM0hLAOfxfkbwMXai96GQCA+seLgS9DpQWNXPgPdPyij4aoj8dNMdRbwCOAPYhb98tgLnnwENml9oHU9z8RLJ6s+vY6WDVpmAR6q6mwLPsV6zRK1OSbTBTaVGRtA2XjNEESSSnIDvBA5xDvxmxREy1AAAAAElFTkSuQmCC" />
+                        وبلاگ</a></li>
+                <li><a href=""><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASJJREFUSEu1lmFVw0AQhL9RACgAFIAEUAASQAFUAeAAFAAScFAc4AAcAAqGt30Jr22uzSbX7O+9+XZns3cRE4cm1qcDsH0J3AGnFfC5pPM4XwJ8AYcV4oujkhbaJYBrxWsAM+ClKeC2sbJYz5gOZpIel9Vs32+CdAC2+6w5kPSzBjgCPkst7AqwD3ynAG3Slk4eJIUl/2H7CnjeFSB0AvAKhFUXQMwkuujEGIsGfb1jAb/AR0OKTd/bRB36mb6FHZLmazM4A2Ifwq6VGAK4ltQuV7Hg0rCzFj1Jigp7w3YM/KZNzAKOJcXl1xu2V5YuZVGb1KveJCzvUAqQFU7tQZuUuJNS3G0dTP7gxJMZV8JJqtRy0ruk2JHui1YhWjw6+V/FH8JvhhnH310GAAAAAElFTkSuQmCC" />
+                        درباره ما</a></li>
+                <li><a href=""><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAU5JREFUSEvFlWFRQzEQhHcVgANAAaAAUABVAHUACgoOqAJaBYACWgfgAAk4WGaZpJOG5M174XW4n226XzZ3eyV2XNyxPv4HIOkRwAGAKcmvv7jcciBpH8AzgPMguiJ5MSbgHcBxJrggOW2F5A5UEWqG9AWYe0fSvRlUOWAF4Kyi8EryapA6sD2mkhYArgsiH258y0TlDnxDT1FazeIWKY3pJ4C9hHBE0p811a8kF57pgeR9k3ruwCKSDgE4D9GFk3yauwihfALgMM5rFyjuIkm+8Sz5kYGTCAnibwBOwplqTqrLTtILgMsEYifOwTIMQhSPR4qQLoD3knORr46udvi8nW4WZOe6Dk9hJ7XwlWBLkjfxi17/B6Ent9n41pzMSfrsT/UCJNPl5juMaU5S0JpkXPXDAFElPJshFvJIx+crJr63g9GC1io0KGhjQr4BmPdtGWiiH+cAAAAASUVORK5CYII=" />تماس
+                        باما</a></li>
+            </ul>
+        </div>
+        <div id="bg-dark-sidemenu">
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- Start Edit User -->
+    <section class="container-fluid sectionEditUser text-right mb-5">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4 col-xl-3 d-none d-md-block sectionEditUserMenu">
+                <ul class="ulEditUserMenu">
+                    <h4 class="titleEditUserMenu">تنظیمات کاربری</h4>
+                    <li class="edit_Item"><a href="#">درباره من</a></li>
+                    <li class="edit_Item"><a href="#">حساب کاربری</a></li>
+                    <li class="edit_Item"><a href="#">اطلاعات شخصی</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-8 col-lg-8 col-xl-9 sectionEditProfile">
+                <div class="row">
+                    <div class="sectionAboutMeEditUser pl-5">
+                        <h4 class="titleAboutMeEditUser">
+                            درباره من
+                        </h4>
+                        <div class="FormAboutMeEditUser">
+                            <div class="editBox editNameProfile">
+                                <div class="editTitle titleEditNameProfile">
+                                    نام نمایشی در سایت :
+                                </div>
+                                <div class="nameProfile">Mmd Semical</div>
+                            </div>
+                            <div class="editBox editBiographyProfile">
+                                <div class="editTitle titleEditBiography">
+                                    بیوگرافی (توضیحات درپروفایل ) :
+                                </div>
+                                <div class="contentBiographyProfile">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                                    صنعت چاپلورم ایپسوم متن ساختگی با
+                                    تولید سادگی نامفهوم از صنعت چاپلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                    چاپ
+                                </div>
+                            </div>
+                            <div class="editBox editPhotoProfile">
+                                <div class="editTitle titleEditPhotoProfile">
+                                    عکس پروفایل شما در سایت نمایش داده میشود :
+                                </div>
+                                <div class="photoProfile">
+                                    <img src="./assets/img/m1.jpg" alt="">
+                                </div>
+                            </div>
+                            <button class="btnEditAboutMeProfile" data-bs-toggle="modal" data-bs-target="#editProfile">
+                                ویرایش پروفایلم
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sectionProfileSettingEditUser mt-5 pl-5 w-100">
+                        <h4 class="titleProfileSettingEditUser">
+                            حساب کاربری
+                        </h4>
+                        <div class="formProfileSettingEditUser">
+                            <div class="editBox editEmailUser">
+                                <div class="editTitle titleEmailUser">
+                                    ایمیل :
+                                </div>
+                                <div class="emailUser">
+                                    MmdSemical@gmail.com
+                                </div>
+                            </div>
+                            <div class="editBox editMobileNumberProfile">
+                                <div class="editTitle titleMobileNumberProfile">شماره موبایل :
+                                </div>
+                                <div class="mobileNumberUser">09023636997
+                                </div>
+                            </div>
+                            <div class="editBox editPasswordUser">
+                                <div class="editTitle titleEditPasswordUser">
+                                    رمز عبور :
+                                </div>
+                                <div class="passwordUser">semicalmmd1234
+                                </div>
+                            </div>
+                            <button data-bs-toggle="modal" data-bs-target="#editSettingUser"
+                                class="btnEditAccount">ویرایش حساب کاربری
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start Modals -->
+    <div class="modal fade text-right modalEditProfile" id="editProfile" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel ">درباره من</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label"> نام نمایشی در سایت :</label>
+                            <input type="text" class="form-control changeEditNameProfile"
+                                placeholder="نام خود را وارد کنید" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">بیوگرافی خود را بنویسید :</label>
+                            <textarea rows="5" class="form-control changeEditBiographyProfile" id="message-text"
+                                placeholder="بیوگرافی خود را بنویسید"></textarea>
+                        </div>
+                        <div class="mb-3 position-relative d-flex sectionEditChangePhotoProfile">
+                            <div class="titleImgEditProfile col-form-label">
+                                عکس پروفایل شما در سایت نمایش داده میشود :
+                            </div>
+                            <label for="changePhotoProfile">
+                                <div class="imgEditProfile">
+                                    <img src="./assets/img/m1.jpg" alt="">
+                                </div>
+                            </label>
+                            <input type="file" class="changePhotoProfile d-none" id="changePhotoProfile">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer btnProfile d-flex justify-content-start">
+                    <button type="button" class="btnCloseEditProfile" data-bs-dismiss="modal">کنسل</button>
+                    <button type="button" id="btnEditProfile" class="btnEditProfile"
+                        data-bs-dismiss="modal">ویرایش</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade text-right modalEditSettingUser" id="editSettingUser" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel ">درباره من</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">ایمیل :</label>
+                            <input type="text" class="form-control changeEditEmailUser text-right"
+                                placeholder="ایمیل خود را وارد کنید" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">شماره موبایل :</label>
+                            <input type="text" class="form-control changeEditNumberUser" id="message-text"
+                                placeholder="شماره موبایل را وارد کنید" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">رمز عبور :</label>
+                            <input type="password" class="form-control changeEditPasswordUser" id="message-text"
+                                placeholder="رمز عبور وارد کنید" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer btnProfile d-flex justify-content-start">
+                    <button type="button" class="btnCloseEditSettingUser" data-bs-dismiss="modal">کنسل</button>
+                    <button type="button" id="btnEditUser" class="btnEditUser" data-bs-dismiss="modal">ویرایش</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modals -->
+    <!-- End Edit User -->
+    <script src="./assets/js/editProfile.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <!-- Boxicon CDN -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

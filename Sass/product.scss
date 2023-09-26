@@ -1,0 +1,513 @@
+// Start Product Page
+.element-right {
+  text-align: right;
+  width: 100%;
+  display: block;
+}
+.element-left {
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+.breakeLine {
+  height: 25px;
+}
+.containerBodyProduct {
+  line-height: 28px;
+  .imgPageProduct {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .lineTextProduct {
+    display: block;
+    width: 100%;
+  }
+  .h5Title {
+    color: $bg__white;
+    width: 100%;
+    text-align: right;
+  }
+  blockquote {
+    background-color: $bg__dark__light;
+    padding: 10px;
+  }
+  .btnFallowing {
+    background-color: $bg__white !important;
+  }
+}
+.sidebarFixed {
+  #contentLeftSideBar {
+    .sectionFallow {
+      .fallowMe {
+        .userFallow {
+          .circleProfile {
+            width: 45px;
+            height: 45px;
+            background-color: $bg__master;
+            border-radius: 50%;
+            @include flexBox(flex, none, center, center);
+          }
+          .nameUser {
+            color: $bg__white;
+            font-size: $font-size + 2px;
+          }
+          .bioUser {
+            font-size: $font-size - 4px;
+            color: $bg__gray;
+            transform: translateY(-5px);
+            line-height: 1.7;
+          }
+        }
+        #btnFallowMe {
+          background-color: $bg__dark__light;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          color: $bg__master;
+          font-size: $font-size - 2px;
+          transition: all 0.4s ease;
+          &:hover {
+            box-shadow: 0 0 5px $bg__master;
+          }
+        }
+      }
+    }
+
+    .sidebarLikeComment {
+      .BoxLikeComment {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        .boxCommentPost {
+          .iconCommentPost {
+            font-size: $font-size + 15px;
+            color: $bg__gray;
+          }
+          .CountCommentPost {
+            font-size: $font-size - 2px;
+          }
+        }
+        .BoxLikeDollar {
+          .iconLikeDollar {
+            position: relative;
+            color: green;
+            .heartGreen {
+              font-size: $font-size + 15px;
+              .dollarToHeartGreen {
+                position: absolute;
+                top: 0;
+                right: 33%;
+                color: $bg__white;
+                font-size: $font-size - 5px;
+              }
+            }
+          }
+          .CountLikeDollarPost {
+            font-size: $font-size - 2px;
+          }
+        }
+        .BoxLikeRed {
+          .iconLikeRed {
+            color: red;
+            font-size: $font-size + 15px;
+          }
+          .CountLikeDollarPost {
+            font-size: $font-size - 2px;
+            display: inline-block;
+            transform: translateX(5px);
+          }
+        }
+        .BoxBookMarkPost {
+          .iconBookMark {
+            color: $bg__white;
+            font-size: $font-size + 15px;
+          }
+        }
+      }
+    }
+    .morePostUser {
+      text-align: right;
+      .titleMorePostUser {
+        color: $bg__master;
+        @include padding(0, 5px, 7px, 5px);
+        position: relative;
+        display: inline-block;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background-color: $bg__white;
+          right: 0;
+          bottom: 0;
+          border-radius: 50%;
+          box-shadow: 0 0 10px $bg__white;
+        }
+      }
+      .otherPostsUser {
+        .otherPostUser {
+          color: $bg__white;
+          margin-top: 5px;
+          @include flexBox(flex, row, none, none);
+          i {
+            line-height: 2;
+            color: $bg__master;
+          }
+          .linkTitleOtherPostUser {
+            color: $bg__white;
+            font-size: $font-size - 2px;
+            margin-right: 5px;
+            &:hover {
+              color: $bg__gray;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    #btnFallowMe {
+      margin-right: 40px;
+    }
+    .sidebarFixed {
+      text-align: right;
+      @include flexBox(flex, row, flex-start, none);
+    }
+    #contentLeftSideBar {
+      margin-top: 10px;
+      border-top: 2px dashed;
+      position: relative;
+      height: auto;
+      text-align: right;
+    }
+    .BoxLikeComment {
+      z-index: 2;
+      position: fixed;
+      bottom: 0;
+      right: 35%;
+      background-color: $bg__dark__light;
+      padding: 10px;
+      @include borderRadius(5px, 5px, 0, 0);
+    }
+  }
+  @media screen and (min-width: 991px) {
+    #contentLeftSideBar {
+      padding: 15px;
+      border-top: 3px solid $bg__dark__light;
+      border-right: 3px solid $bg__dark__light;
+      position: fixed;
+      height: auto;
+      text-align: right;
+    }
+  }
+}
+//Style Other Content
+.sectionOtherContent {
+  position: relative;
+  background-color: $bg__dark;
+  .titleSectionOtherContent {
+    width: 100%;
+    text-align: right;
+    h5 {
+      text-align: right;
+      color: $bg__master;
+      display: inline-block;
+      padding: 7px;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $bg__white;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 10px $bg__white;
+      }
+    }
+  }
+  .cardOtherContent {
+    background-color: $bg__dark__light;
+    border-radius: 10px;
+    .imgOtherContent {
+      @include borderRadius(5px, 5px, 0, 0);
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        height: 150px;
+      }
+    }
+    .postItemBody {
+      .titleOtherContent {
+        text-align: right;
+        line-height: 3;
+        @include padding(0, 15px, 15px, 0);
+      }
+    }
+    .postItemFooter {
+      text-align: right;
+      display: flex;
+      padding: 10px;
+      .userInfo {
+        flex: 0 90%;
+        @include flexBox(flex, row, flex-start, center);
+        color: $bg__white;
+        .profile {
+          background-color: $bg__master;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          @include flexBox(flex, none, center, center);
+          font-size: $font-size + 5px;
+          color: $bg__white;
+        }
+        .nameProfile {
+          color: $bg__white;
+          padding-right: 10px;
+          padding-bottom: 15px;
+        }
+        .readTime {
+          color: $bg__gray;
+          font-size: $font-size - 5px;
+          position: absolute;
+          bottom: 15px;
+          right: 85px;
+        }
+      }
+      .marked {
+        font-size: $font-size + 5px;
+        color: $bg__white;
+        @include flexBox(flex, none, center, center);
+        margin: 15px;
+      }
+    }
+  }
+}
+// Style Comments
+.sectionComments {
+  .sectionSendComment {
+    width: 100%;
+    position: relative;
+    margin: 30px;
+    @include flexBox(flex, column, center, center);
+    textarea {
+      width: 100%;
+      height: auto;
+      background-color: $bg__dark__light;
+      outline: none;
+      border: none;
+      color: $bg__white;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid $bg__white;
+      transition: all 0.4s ease;
+      &:focus {
+        border: 1px solid $bg__master;
+      }
+      &::placeholder {
+        font-size: $font-size;
+        color: $bg__gray;
+      }
+    }
+    .btnSendComment {
+      outline: none;
+      border: none;
+      background-color: $bg__master;
+      color: $bg__white;
+      margin-top: 10px;
+      width: 250px;
+      height: 60px;
+      border-radius: 5px;
+      align-self: flex-start;
+      font-size: $font-size + 4px;
+      transition: all 0.4s ease;
+      &:hover {
+        box-shadow: 0 0 10px $bg__master;
+      }
+    }
+  }
+  .comments {
+    .contComment {
+      .userComment {
+        .profileUser {
+          display: inline-block;
+          width: 48px;
+          height: 48px;
+          background-color: $bg__master;
+          border-radius: 50%;
+          color: $bg__white;
+          @include flexBox(flex, none, center, center);
+          font-size: $font-size + 3px;
+          margin-left: 5px;
+        }
+      }
+    }
+    .titleComments {
+      h3 {
+        display: inline-block;
+        margin-right: 65px;
+        color: $bg__master;
+        padding: 7px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          right: 0;
+          background-color: $bg__white;
+          border-radius: 50%;
+          box-shadow: 0 0 10px $bg__white;
+        }
+      }
+    }
+    .comment {
+      margin: 0 !important;
+      border: 2px solid $bg__dark__light;
+      border-radius: 5px;
+      padding: 10px;
+      margin-right: 5px !important;
+      background-color: $bg__dark;
+      .sectionUserCommenter {
+        @include flexBox(flex, column, none, none);
+        .nameUserCommenter {
+          font-size: $font-size + 2px;
+          color: $bg__master;
+        }
+        .timeUserComment {
+          color: $bg__gray;
+          font-size: $font-size - 4px;
+        }
+        .textUserComment {
+          text-align: justify;
+          color: $bg__white;
+          font-size: $font-size - 2px;
+          line-height: 30px;
+        }
+      }
+      .likeAndReplayUser {
+        .iconLikeRed {
+          font-size: $font-size + 15px;
+          color: red;
+        }
+        .replayComment {
+          font-size: $font-size + 15px;
+          color: $bg__gray;
+        }
+        .CountLikeComment {
+          display: inline-block;
+          transform: translateX(7px);
+          font-size: $font-size - 2px;
+        }
+        .modal {
+          width: 100%;
+          .modal-dialog {
+            max-width: 100%;
+            .modal-content {
+              background-color: $bg__dark;
+              padding: 10px;
+              .modal-body {
+                padding: 0;
+                .sectionSendComment {
+                  width: 100%;
+                  margin: 0;
+                  padding: 20px;
+                }
+              }
+              .modal-header {
+                border-bottom: 0;
+                @include flexBox(flex, row, end, none);
+                .btn-close {
+                  border: none;
+                  font-size: $font-size + 15px;
+                  background-color: transparent;
+                  color: $bg__white;
+                  &:focus {
+                    border: none;
+                    outline: none;
+                  }
+                  &:active {
+                    border: none;
+                    outline: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.likeCommentsInWidthLabtop {
+  display: flex;
+  justify-content: center;
+  .BoxLikeComment {
+    @include flexBox(flex, row, center, center);
+    padding: 10px;
+    min-width: 270px;
+    gap: 10px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 16%;
+      height: 4px;
+      top: 0;
+      border-bottom: 2px dashed;
+    }
+    .boxCommentPost {
+      .iconCommentPost {
+        font-size: $font-size + 15px;
+        color: $bg__gray;
+      }
+      .CountCommentPost {
+        font-size: $font-size - 2px;
+      }
+    }
+    .BoxLikeDollar {
+      .iconLikeDollar {
+        position: relative;
+        color: green;
+        .heartGreen {
+          font-size: $font-size + 15px;
+          .dollarToHeartGreen {
+            position: absolute;
+            top: 0;
+            right: 33%;
+            color: $bg__white;
+            font-size: $font-size - 5px;
+          }
+        }
+      }
+      .CountLikeDollarPost {
+        font-size: $font-size - 2px;
+      }
+    }
+    .BoxLikeRed {
+      .iconLikeRed {
+        color: red;
+        font-size: $font-size + 15px;
+      }
+      .CountLikeDollarPost {
+        font-size: $font-size - 2px;
+        display: inline-block;
+        transform: translateX(5px);
+      }
+    }
+    .BoxBookMarkPost {
+      .iconBookMark {
+        color: $bg__white;
+        font-size: $font-size + 15px;
+      }
+    }
+  }
+}

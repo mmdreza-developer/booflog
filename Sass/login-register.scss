@@ -1,0 +1,290 @@
+@import "./Variable.scss";
+$bg__dark: #1a233a;
+$bg__master__hover: #fd7a4a;
+$bg__gray__dark: #a1a1a1;
+
+.bg-authentication {
+  background-color: $bg__dark__light !important;
+  color: $bg__white;
+  hr {
+    background-color: $bg__gray__dark;
+  }
+  div {
+    a {
+      color: $bg__master;
+      &:hover {
+        color: $bg__master__hover;
+      }
+    }
+  }
+}
+.formLogin {
+  text-align: right;
+  color: $bg__white;
+  background-color: $bg__dark__light;
+  .card-header {
+    border-bottom: 1px solid $bg__gray__dark;
+  }
+  .btn-social {
+    color: $bg__white;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg__master;
+    align-items: center;
+    margin: 0px 5px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background-color: $bg__dark__light;
+      left: 40px;
+    }
+    &:nth-child(1) {
+      background-color: #dd4b39;
+    }
+    &:nth-child(2) {
+      background-color: #3b5998;
+    }
+    &:hover {
+      color: $bg__white !important;
+    }
+    i {
+      font-size: $font-size + 3px;
+    }
+  }
+  .divider-text {
+    text-align: center;
+    color: $bg__gray !important;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      background-color: $bg__gray__dark;
+      top: 50%;
+      left: -5px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      background-color: $bg__gray;
+      top: 50%;
+      right: -5px;
+    }
+  }
+  form {
+    .form-group {
+      color: $bg__white;
+      input {
+        text-align: right;
+        &::placeholder {
+          padding-right: 4px;
+          color: $bg__gray !important;
+          outline: none !important;
+          border: none !important;
+        }
+      }
+    }
+  }
+  .text-right {
+    a {
+      color: $bg__master;
+      &:hover {
+        color: $bg__master__hover;
+      }
+    }
+  }
+  button.btn {
+    background-color: $bg__master;
+    outline: none;
+    border: none;
+    i {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      font-size: $font-size - 2px;
+    }
+    &:hover {
+      background-color: $bg__master__hover;
+    }
+  }
+  input.form-control {
+    color: $bg__white;
+    background-color: $bg__dark;
+    border: 1px solid $bg__gray;
+    transition: all 0.3s ease;
+    height: 40px;
+    font-size: $font-size - 1px;
+    &:focus {
+      padding-right: 16px;
+      font-size: $font-size - 2px;
+      box-shadow: none;
+      border: 1px solid $bg__gray;
+      box-shadow: 0 0 4px $bg__gray;
+    }
+  }
+}
+// style forget password
+.formForgetPassword {
+  small {
+    color: $bg__gray;
+  }
+  background-color: $bg__dark__light;
+  .form-control {
+    color: $bg__white;
+    background-color: $bg__dark;
+    border: 1px solid $bg__gray;
+    transition: all 0.3s ease;
+    height: 40px;
+    font-size: $font-size - 1px;
+    &:focus {
+      padding-right: 16px;
+      font-size: $font-size - 2px;
+      box-shadow: none;
+      border: 1px solid $bg__gray;
+      box-shadow: 0 0 4px $bg__gray;
+      background-color: $bg__dark;
+    }
+  }
+  .btn-social {
+    color: $bg__white;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg__master;
+    align-items: center;
+    margin: 0px 5px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background-color: $bg__dark__light;
+      left: 40px;
+    }
+    &:nth-child(1) {
+      background-color: #dd4b39;
+    }
+    &:nth-child(2) {
+      background-color: #3b5998;
+    }
+    &:hover {
+      color: $bg__white !important;
+    }
+    i {
+      font-size: $font-size + 3px;
+    }
+  }
+  .divider-text {
+    text-align: center;
+    color: $bg__gray !important;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 25%;
+      height: 1px;
+      background-color: $bg__gray__dark;
+      top: 50%;
+      left: -5px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 25%;
+      height: 1px;
+      background-color: $bg__gray;
+      top: 50%;
+      right: -5px;
+    }
+  }
+  form {
+    .form-group {
+      color: $bg__white;
+      input {
+        text-align: right;
+        &::placeholder {
+          padding-right: 4px;
+          color: $bg__gray !important;
+          outline: none !important;
+          border: none !important;
+        }
+      }
+    }
+  }
+  .loginRegister {
+    display: flex;
+    justify-content: space-around;
+    div {
+      a {
+        color: $bg__white;
+        border: 1px solid $bg__master__hover;
+        &:hover {
+          content: "";
+          color: $bg__white;
+          background-color: $bg__master__hover;
+        }
+      }
+    }
+  }
+  button {
+    background-color: $bg__master;
+    border: none;
+    transition: all 0.4s ease;
+    &:hover {
+      background-color: $bg__master__hover;
+    }
+  }
+}
+.typeRegistering {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  gap: 5px;
+  button.active {
+    outline: none;
+    border: 2px solid $bg__gray;
+    box-shadow: 0 0 5px $bg__gray__dark;
+    background-color: transparent !important;
+    box-shadow: 0 0 10px $bg__gray__dark;
+  }
+  button {
+    border: none;
+    outline: none;
+    color: $bg__white;
+    background-color: transparent !important;
+    border: 2px solid $bg__dark;
+    padding: 5px 15px;
+    transition: 0.5s ease;
+    border-radius: 5 !important;
+    box-shadow: 0 0 10px $bg__dark;
+    &:focus {
+      outline: none;
+      background-color: transparent !important;
+      box-shadow: 0 0 10px $bg__gray__dark;
+    }
+  }
+}
+.submitRegisterWithNumber {
+  width: 100%;
+  button {
+    background-color: $bg__master;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    color: $bg__white;
+    width: 100%;
+    padding: 6px;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $bg__master__hover;
+    }
+  }
+}

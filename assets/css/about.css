@@ -1,0 +1,257 @@
+@font-face {
+  font-family: Vazir-Medium;
+  src: url("../fonts/Vazir-Medium.eot") format("eot"), url("../fonts/Vazir-Medium.woff") format("woff"), url("../fonts/Vazir-Medium.woff2") format("woff2");
+}
+::-webkit-scrollbar-thumb {
+  background: #fb6b36;
+  border-radius: 25% !important;
+}
+
+::-webkit-scrollbar {
+  cursor: pointer;
+  width: 15px;
+}
+
+*,
+body {
+  font-family: Vazir-Medium;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a233a;
+  color: #fff;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.SectionAbout .sectionContent h2 {
+  color: #fb6b36;
+}
+.SectionAbout .sectionContent p {
+  line-height: 28px;
+  font-size: 14px;
+}
+.SectionAbout .sectionDescriptionAdmin .imgAdmin {
+  padding: 0;
+}
+.SectionAbout .sectionDescriptionAdmin .imgAdmin img {
+  width: 100%;
+  height: 100%;
+}
+.SectionAbout .descriptionAdmin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fb6b36;
+}
+.SectionAbout .descriptionAdmin p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.sectionBoxSpecials {
+  text-align: right;
+}
+.sectionBoxSpecials .boxSpecial {
+  display: flex;
+}
+.sectionBoxSpecials .boxSpecial div.iconBoxSpecial {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.sectionBoxSpecials .boxSpecial div.iconBoxSpecial span {
+  background-color: #fb6b36;
+  color: #fff;
+  padding: 7px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionBoxSpecials .boxSpecial .textBoxSpecial .titleSpecial {
+  font-size: 20px;
+}
+.sectionBoxSpecials .boxSpecial .textBoxSpecial p {
+  color: #b6b6b6;
+}
+
+.sectionAboutBooflog {
+  border-top: 2px solid #fb6b36;
+}
+.sectionAboutBooflog .titleAboutBooflog h4 {
+  color: #fff;
+}
+.sectionAboutBooflog .subTitleAboutBooflog {
+  border-bottom: 2px solid #fb6b36;
+}
+.sectionAboutBooflog .contextAboutBooflog {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.sectionAboutAdmin {
+  width: 100%;
+  display: flex !important;
+  text-align: justify;
+}
+.sectionAboutAdmin .aboutMe .titleAboutMe span {
+  background-color: #fb6b36;
+  width: 200px;
+  display: inline-block;
+  text-align: right;
+  padding: 5px;
+  border-radius: 5px;
+}
+.sectionAboutAdmin .aboutMe .contextAboutMe {
+  font-size: 14px;
+}
+
+.myGoals {
+  text-align: justify;
+}
+.myGoals .titleMyGoals span {
+  background-color: #fb6b36;
+  width: 200px;
+  display: inline-block;
+  text-align: right;
+  padding: 5px;
+  border-radius: 5px;
+}
+.myGoals .contextMyGoals {
+  font-size: 14px;
+}
+
+.myMission {
+  text-align: justify;
+}
+.myMission .titleMyMission span {
+  background-color: #fb6b36;
+  width: 200px;
+  text-align: right;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+}
+.myMission .contextMyMission {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .sectionAboutAdmin {
+    display: grid !important;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .aboutMe {
+    grid-area: 1/2/2/4;
+  }
+  .myGoals {
+    grid-area: 2/4/3/6;
+  }
+  .myMission {
+    grid-area: 3/2/3/4;
+  }
+}
+.sectionFormValidation .imgFormValidation img {
+  width: 100%;
+}
+.sectionFormValidation .formValidation .titleFromValidation {
+  color: #fb6b36;
+  margin-bottom: 15px;
+}
+.sectionFormValidation .formValidation .titleFromValidation span {
+  padding: 5px;
+  position: relative;
+}
+.sectionFormValidation .formValidation .titleFromValidation span:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 50%;
+}
+.sectionFormValidation .formValidation form .inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.sectionFormValidation .formValidation form .inputs input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #fff;
+  padding: 5px;
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .inputs input::-moz-placeholder {
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .inputs input:-ms-input-placeholder {
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .inputs input::placeholder {
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .textArea {
+  width: 100%;
+}
+.sectionFormValidation .formValidation form .textArea textarea {
+  background-color: transparent;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  color: #fff;
+  outline: none;
+  border: 2px solid #fff;
+}
+.sectionFormValidation .formValidation form .textArea textarea::-moz-placeholder {
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .textArea textarea:-ms-input-placeholder {
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .textArea textarea::placeholder {
+  color: #fff;
+}
+.sectionFormValidation .formValidation form .submitFormValidation {
+  text-align: right;
+}
+.sectionFormValidation .formValidation form .submitFormValidation button {
+  outline: none;
+  border: none;
+  background-color: #fb6b36;
+  color: #fff;
+  width: 140px;
+  height: 40px;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+.sectionFormValidation .formValidation form .submitFormValidation button:hover {
+  box-shadow: 0 0 8px #fb6b36;
+}/*# sourceMappingURL=about.css.map */

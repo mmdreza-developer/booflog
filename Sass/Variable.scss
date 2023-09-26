@@ -1,0 +1,79 @@
+$bg__dark: #1a233a;
+$bg__dark__op: #1a233ac5;
+$bg__dark__light: #272e48;
+$bg__master: #fb6b36;
+$bg__white: #fff;
+$bg__gray: #b6b6b6;
+
+@mixin flexBox($display: flex, $flex-direction, $justify-content, $align-item) {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-item;
+}
+
+@font-face {
+  font-family: Vazir-Medium;
+  src: url("../fonts/Vazir-Medium.eot") format("eot"),
+    url("../fonts/Vazir-Medium.woff") format("woff"),
+    url("../fonts/Vazir-Medium.woff2") format("woff2");
+}
+
+$font-size: 16px;
+
+@mixin margin($margin-top, $margin-right, $margin-bottom, $margin-left) {
+  margin: $margin-top $margin-right $margin-bottom $margin-left;
+}
+
+@mixin padding($padding-top, $padding-right, $padding-bottom, $padding-left) {
+  padding: $padding-top $padding-right $padding-bottom $padding-left;
+}
+
+@mixin borderRadius($top-left, $top-right, $bottom-right, $bottom-left) {
+  border-radius: $top-left $top-right $bottom-right $bottom-right;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg__master;
+  border-radius: 25% !important;
+}
+
+::-webkit-scrollbar {
+  cursor: pointer;
+  width: 15px;
+}
+
+*,
+body {
+  font-family: Vazir-Medium;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $bg__dark;
+  color: $bg__white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+.button-grid {
+  background: $bg__dark;
+  @include padding(5px, 10px, 5px, 10px);
+  color: #fb6b36;
+}

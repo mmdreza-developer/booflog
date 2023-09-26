@@ -1,0 +1,127 @@
+@import "./Variable.scss";
+.sectionUser {
+  .container-user {
+    aside.profile-user-header {
+      .userName {
+        color: $bg__master;
+      }
+      .goTo-setting-user {
+        margin-top: 10px;
+        a {
+          color: $bg__white;
+          border: 2px solid $bg__dark__light;
+          padding: 5px 15px;
+          border-radius: 15px;
+          font-size: $font-size - 2px;
+          &:hover {
+            background-color: $bg__dark__light;
+          }
+        }
+      }
+    }
+  }
+  .container-content-user {
+    aside.content-user {
+      #myTab {
+        .nav-item {
+          .active {
+            border: 0 !important;
+            outline: 0 !important;
+            border-bottom: 2px solid $bg__master !important;
+            color: $bg__master!important;
+          }
+          .nav-link {
+            background-color: transparent;
+            color: $bg__white;
+            border: 0;
+            border-bottom: 1px solid $bg__dark__light;
+
+            &:active {
+              border: 0 !important;
+              outline: 0;
+            }
+          }
+        }
+      }
+      @media screen and (min-width: 991px) {
+        #myTabContent {
+          width: 100%;
+        }
+      }
+      #myTabContent {
+        .tab-pane {
+          .content-post-user {
+            .ifNotPostUser {
+              .titleNotPostUser {
+                color: $bg__gray;
+              }
+              .goTo-createPost {
+                text-align: right;
+                margin-top: 15px;
+                a {
+                  color: $bg__master;
+                  padding: 7px;
+                  border-bottom: 2px solid $bg__master;
+                  box-shadow: 0 0 5px $bg__master;
+                  &:hover {
+                    background-color: $bg__dark__light;
+                  }
+                }
+              }
+            }
+          }
+          .ifNotStore {
+            .titleNotStore {
+              color: $bg__gray;
+            }
+          }
+          .ifNotRelease {
+            color: $bg__gray;
+          }
+        }
+      }
+    }
+  }
+}
+.storesPost {
+  text-align: right;
+
+  .sectionCardsStoresPost {
+    gap: 10px;
+    justify-content: center;
+    .card {
+      background-color: $bg__dark__light;
+      .card-title {
+        margin: 0;
+        padding-top: 10px;
+      }
+      .card-body {
+        padding: 0 !important;
+        padding-right: 10px !important;
+      }
+      .card-writer {
+        font-size: $font-size - 2px;
+        color: $bg__gray;
+      }
+      .gotoPagePost {
+        width: 100%;
+        text-align: center;
+        a {
+          background-color: $bg__master;
+          display: block;
+          color: $bg__white;
+          padding: 5px;
+          &:hover {
+            box-shadow: 0 0 5px $bg__master;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and(min-width:991px) {
+  .sectionCardsStoresPost {
+display: flex;
+justify-content: start!important;
+  }
+}
